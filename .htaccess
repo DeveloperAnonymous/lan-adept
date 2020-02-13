@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteRule ^shop/edit shop/edit.php
+</IfModule>
+ErrorDocument 404 /404/
+ErrorDocument 403 /404/
