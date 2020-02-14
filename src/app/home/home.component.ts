@@ -1,7 +1,8 @@
 // declare const $: any;
 import * as $ from 'jquery';
 import { Component, OnInit } from '@angular/core';
-// https://angular.io/guide/rx-library pour les intervals
+import { interval } from 'rxjs';
+const ticker = interval(1000);
 
 @Component({
 	selector: 'app-home',
@@ -10,18 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 	date:any = new Date("Mar 20, 2020 12:00:00");
-	days: number;
-	hours: number;
-	minutes: number;
-	seconds: number;
+	days: number = this.getDays();
+	hours: number = this.getHours();
+	minutes: number = this.getMinutes();
+	seconds: number = this.getSeconds();
 
 	constructor() { }
 
 	ngOnInit(): void {
-		setInterval(function () {}, 1000);
+		
 	}
 	ngAfterViewInit(): void {
-
+		ticker.subscribe(_ => {
+			this.days = this.getDays();
+			this.hours = this.getHours();
+			this.minutes = this.getMinutes();
+			this.seconds = this.getSeconds();
+		});
 	}
 
 	getDate() {
