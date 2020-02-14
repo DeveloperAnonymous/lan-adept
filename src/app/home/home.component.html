@@ -14,10 +14,32 @@
                             <br>
                             <br>
                             <div class="white" style="font-size: 2rem">Le LAN débutera le</div>
-                            <div class="white" id="date" style="font-size: 4rem">20/03/2020 12:00</div>
+                            <div class="white" id="date" style="font-size: 4rem">
+                              {{getDate()}}
+                            </div>
                             <br>
                             <br>
-                            <h3 class="countDown"></h3>
+                            <h3 class="countDown">
+                              <div class='row' style='color: white;'> 
+                                <div class='col-3'>
+                                  <div class='col-12'>{{getDays()}}</div>
+                                  <div class='col-12' *ngIf="getDays() > 1">Jours</div>
+                                  <div class='col-12' *ngIf="getDays() <= 1">Jour</div>
+                                </div>
+                                <div class='col-3'>
+                                  <div class='col-12'>{{getHours()}}</div>
+                                  <div class='col-12'> Heures</div>
+                                </div>
+                                <div class='col-3'>
+                                  <div class='col-12'>{{getMinutes()}}</div>
+                                  <div class='col-12'> Minutes</div>
+                                </div>
+                                <div class='col-3'>
+                                  <div class='col-12'>{{getSeconds()}}</div>
+                                  <div class='col-12'> Secondes</div>
+                                </div>
+                              </div>
+                            </h3>
                             <a href="" class="btn-get-started scrollto">Participer</a>
                         </div>
                     </div>
