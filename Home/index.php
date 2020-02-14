@@ -12,6 +12,7 @@
     <link type="text/css" rel="stylesheet" href="../Assets/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="../Assets/css/index.css"/>
     <link type="text/css" rel="stylesheet" href="../Assets/css/style.css"/>
+    <script defer src="../Assets/js/index.js"></script>
 </head>
 <body>
 <header id="header">
@@ -38,12 +39,17 @@
                 <div class="carousel-item active" id="first" style="background-image: url('../Assets/img/adeptInfo.jpg');">
                     <div class="carousel-container">
                         <div class="carousel-content">
-                            <h2>Bienvenue à l'ADEPT</h2>
-                            <p>L'ADEPT, c'est l'Association Des Étudiants et Étudiantes du Programme de Technique
-                                Informatique du cégep Édouard-Montpetit. <br class="hidden-mobile"><strong>Venez nous
-                                    voir, nous sommes au local F-045 situé dans la cafeteria !</strong>
+                            <h2>Bienvenue sur le site<br> du <br> LAN de l'ADEPT</h2>
+                            <p>Nous organisons un LAN à chaque session durant la semaine de "lecture" !
                             </p>
-                            <a href="#about" class="btn-get-started scrollto">Découvrir l'ADEPT</a>
+                            <br>
+                            <br>
+                            <div class="white" style="font-size: 2rem">Le LAN débutera le</div>
+                            <div class="white" style="font-size: 4rem">20/03/2020 12:00</div>
+                            <br>
+                            <br>
+                            <h3 class="countDown"></h3>
+                            <a href="" class="btn-get-started scrollto">Participer</a>
                         </div>
                     </div>
                 </div>
