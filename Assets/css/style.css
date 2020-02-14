@@ -5,7 +5,8 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
 @font-face {
   font-family: 'Imagine';
-  src: url('../font/imagine-font.otf') format('truetype'),
+  src: url('../font/imagine-font.woff2') format('woff2'),
+  url('../font/imagine-font.woff') format('woff'),
   url('../font/imagine-font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;

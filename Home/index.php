@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>LAN ADEPT</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../Assets/css/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="../Assets/css/index.css" />
     <link type="text/css" rel="stylesheet" href="../Assets/css/style.css" />
@@ -15,12 +17,8 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
                     <li class="menu-active d-block d-sm-none"><a href="#">Accueil</a></li>
-                    <li><a href="/?lang=fr#about">Qui sommes nous</a></li>
-                    <li><a href="/?lang=fr#services">Nos services</a></li>
-                    <li><a href="/?lang=fr#team">Membres du conseil</a></li>
-                    <li><a href="/?lang=fr#contact">Contact</a></li>
-                    <li><a href="http://adeptinfo.ca/lan">LAN de L'ADEPT</a></li>
-                    <li><a href="?lang=en">en</a></li>
+                    <li><a href="">Places</a></li>
+                    <li><a href="">Se connecter</a></li>
                 </ul>
             </nav>
         </div>
