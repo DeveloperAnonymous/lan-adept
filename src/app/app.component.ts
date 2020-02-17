@@ -6,17 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Titre ici';
-  penis = "vagin";
-  heros = ["Iron man", "super man", "Captain marvel"];
-  indexArray = new Array(20);
+  constructor(){}
 
-
-  constructor(){
-
-  }
-
-  allo(){
-      alert("Test");
+  mobile = true;
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    
   }
 }
