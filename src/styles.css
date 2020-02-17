@@ -38,6 +38,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  color: white;
   margin: 0 0 20px 0;
   padding: 0;
 }
@@ -176,17 +177,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 60px;
   }
 }
-
-#header #logo h1 {
-  font-size: 34px;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
 #header #logo h1 a, #header #logo h1 a:hover {
   color: #fff;
   padding-left: 10px;
@@ -1298,6 +1288,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .table{
   color:black;
+}
+
+/* MOBILE */
+
+.MobileBackground{
+  background-image: url("assets/img/LanHome.JPG");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: white;
+  background-size: cover;
+  height: 100vh;
+}
+.Veil{
+  background-color:rgba(0,0,0,0.4);
+}
+.MobileContainer{
+  text-align: center;
+  padding-top: 50px;
+  height: 100vh;
 }
 
 /*TEST -------*/

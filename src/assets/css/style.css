@@ -240,21 +240,6 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
-#intro .carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#intro .carousel-content {
-  text-align: center;
-}
-
 #intro h2 {
   color: #fff;
   margin-bottom: 30px;
@@ -1539,5 +1524,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 .table{
   color:black;
 }
+/* MOBILE CONTENT */
+
+.MobileContainer{
+  background-color: black !important;
+  background-image: url("../img/adeptInfo.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
 
 /*TEST -------*/

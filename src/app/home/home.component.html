@@ -55,5 +55,55 @@
   </section>
 </ng-container>
 <ng-template #elseMobile>
+  <style>
+    header {
+      padding: 0px !important;
+      background-color: black !important;
+    }
+  </style>
+  <div class="MobileBackground">
+    <div class="Veil">
+    <div class="MobileContainer">
+      <h2 class=" white title h2">Bienvenue sur le site<br> du LAN de l'ADEPT</h2>
+      <p class="white">Nous organisons un LAN à chaque session durant la semaine de "lecture" !</p>
+      <br>
+      <br>
+      <ng-container *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0; else finishTemplate">
+        <div class="white" style="font-size: 8vw">Le LAN débutera le</div>
+        <div class="white title h1" id="date" style="font-size: 10vw">{{getDate()}}</div>
+        <br>
+        <h3 class="countDown title h3" style="font-size: 8vw;" *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0">
+          <div class='row' style='color: white;'>
+            <div class='col-md-3 col-sm-6 col-3'>
+              <div class='col-12'>{{days}}</div>
+              <div>J</div>
+            </div>
+            <div class='col-md-3 col-sm-6 col-3'>
+              <div class='col-12'>{{hours}}</div>
+              <div>H</div>
+            </div>
+            <div class='col-md-3 col-sm-6 col-3'>
+              <div class='col-12'>{{minutes}}</div>
+              <div>M</div>
+            </div>
+            <div class='col-md-3 col-sm-6 col-3'>
+              <div class='col-12'>{{seconds}}</div>
+              <div>S</div>
+            </div>
+          </div>
+        </h3>
+        <br>
+        <br>
+        <a href="" class="btn-get-started scrollto">Participer</a>
+      </ng-container>
+      <ng-template #finishTemplate>
+        <div class="white" id="date" style="font-size: 4rem">Le LAN est fini</div>
+        <div class="white" style="font-size: 2rem">Nous nous reverrons bientôt</div>
+      </ng-template>
+    </div>      
+    </div>
+
+  </div>
+
 
 </ng-template>
