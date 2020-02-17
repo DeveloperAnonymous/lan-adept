@@ -1,86 +1,110 @@
-<section id="intro">
-  <div class="intro-container">
-    <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#introCarousel" data-slide-to="0" class="active"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" id="first" style="background-image: url('assets/img/adeptInfo.jpg');">
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="title h2">Bienvenue sur le site<br> du <br> LAN de l'ADEPT</h2>
-              <p>Nous organisons un LAN à chaque session durant la semaine de "lecture" !</p>
-              <br>
-              <br>
-              <ng-container *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0; else elseTemplate">
-                <div class="white" style="font-size: 2rem">Le LAN débutera le</div>
-                <div class="white title h1" id="date" style="font-size: 4rem">{{getDate()}}</div>
-                <h3 class="countDown title h3" *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0">
-                  <div class='row' style='color: white;'>
-                    <div class='col-md-3 col-sm-6'>
-                      <div class='col-12'>{{days}}</div>
-                      <div *ngIf="days > 1">Jours</div>
-                      <div *ngIf="days <= 1">Jour</div>
+<ng-container *ngIf="!mobile; else elseMobile">
+        <section id="intro">
+                <div class="intro-container">
+                    <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active" id="first" style="background-image: url('assets/img/adeptInfo.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        <h2 class="title h2">Bienvenue sur le site<br> du <br> LAN de l'ADEPT</h2>
+                                        <p>Nous organisons un LAN à chaque session durant la semaine de "lecture" !</p>
+                                        <br>
+                                        <br>
+                                        <ng-container *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0; else finishTemplate">
+                                            <div class="white" style="font-size: 2rem">Le LAN débutera le</div>
+                                            <div class="white title h1" id="date" style="font-size: 4rem">{{getDate()}}</div>
+                                            <br>
+                                            <h3 class="countDown title h3" *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0">
+                                                <div class='row' style='color: white;'>
+                                                    <div class='col-md-3 col-sm-6 col-3'>
+                                                        <div class='col-12'>{{days}}</div>
+                                                        <ng-container *ngIf="mobile; else elseDay">
+                                                            <div>J</div>
+                                                        </ng-container>
+                                                        <ng-template #elseDay>
+                                                            <div *ngIf="days > 1">Jours</div>
+                                                            <div *ngIf="days <= 1">Jour</div>
+                                                        </ng-template>
+                                                    </div>
+                                                    <div class='col-md-3 col-sm-6 col-3'>
+                                                        <div class='col-12'>{{hours}}</div>
+                                                        <ng-container *ngIf="mobile; else elseHours">
+                                                            <div>H</div>
+                                                        </ng-container>
+                                                        <ng-template #elseHours>
+                                                            <div *ngIf="hours > 1">Heures</div>
+                                                            <div *ngIf="hours <= 1">Heure</div>
+                                                        </ng-template>
+                                                    </div>
+                                                    <div class='col-md-3 col-sm-6 col-3'>
+                                                        <div class='col-12'>{{minutes}}</div>
+                                                        <ng-container *ngIf="mobile; else elseMins">
+                                                            <div>M</div>
+                                                        </ng-container>
+                                                        <ng-template #elseMins>
+                                                            <div *ngIf="minutes > 1">Minutes</div>
+                                                            <div *ngIf="minutes <= 1">M</div>
+                                                        </ng-template>
+                                                    </div>
+                                                    <div class='col-md-3 col-sm-6 col-3'>
+                                                        <div class='col-12'>{{seconds}}</div>
+                                                        <ng-container *ngIf="mobile; else elseSecs">
+                                                            <div>S</div>
+                                                        </ng-container>
+                                                        <ng-template #elseSecs>
+                                                            <div *ngIf="seconds > 1">Secondes</div>
+                                                            <div *ngIf="seconds <= 1">Seconde</div>
+                                                        </ng-template>
+                                                    </div>
+                                                </div>
+                                            </h3>
+                                            <br>
+                                            <br>
+                                            <a href="" class="btn-get-started scrollto">Participer</a>
+                                        </ng-container>
+                                        <ng-template #finishTemplate>
+                                            <div class="white" id="date" style="font-size: 4rem">Le LAN est fini</div>
+                                            <div class="white" style="font-size: 2rem">Nous nous reverrons bientôt</div>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- À décommenter pour ajouter des pages au carroussel
+                            <div class="carousel-item" style="background-image: url('img/intro-carousel/2.jpg');">
+                                <div class="carousel-container">
+                                  <div class="carousel-content">
+                                      <h2>Bienvenue à l'ADEPT</h2>
+                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                      <a href="#about" class="btn-get-started scrollto">Découvrir l'ADEPT</a>
+                                  </div>
+                                </div>
+                                </div>
+            
+                                <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg');">
+                                <div class="carousel-container">
+                                  <div class="carousel-content">
+                                    <h2>Bienvenue à l'ADEPT</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <a href="#about" class="btn-get-started scrollto">Découvrir l'ADEPT</a>
+                                  </div>
+                                </div>
+                                </div> -->
+                            <!-- </div>
+                            <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                              <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                              <span class="sr-only">Suivant</span>
+                            </a>
+                          </div> -->
+                        </div>
                     </div>
-                    <div class='col-md-3 col-sm-6'>
-                      <div class='col-12'>{{hours}}</div>
-                      <div *ngIf="hours > 1">Heures</div>
-                      <div *ngIf="hours <= 1">Heure</div>
-                    </div>
-                    <div class='col-md-3 col-sm-6'>
-                      <div class='col-12'>{{minutes}}</div>
-                      <div *ngIf="minutes > 1">Minutes</div>
-                      <div *ngIf="minutes <= 1">Minute</div>
-                    </div>
-                    <div class='col-md-3 col-sm-6'>
-                      <div class='col-12'>{{seconds}}</div>
-                      <div *ngIf="seconds > 1">Secondes</div>
-                      <div *ngIf="seconds <= 1">Seconde</div>
-                    </div>
-                  </div>
-                </h3>
-                <br>
-                <br>
-                <a href="" class="btn-get-started scrollto">Participer</a>
-              </ng-container>
-              <ng-template #elseTemplate>
-                <div class="white" id="date" style="font-size: 4rem">Le LAN est fini</div>
-                <div class="white" style="font-size: 2rem">Nous nous reverrons bientôt</div>
-              </ng-template>
-            </div>
-          </div>
-        </div>
-        <!-- À décommenter pour ajouter des pages au carroussel
-                <div class="carousel-item" style="background-image: url('img/intro-carousel/2.jpg');">
-                    <div class="carousel-container">
-                      <div class="carousel-content">
-                          <h2>Bienvenue à l'ADEPT</h2>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          <a href="#about" class="btn-get-started scrollto">Découvrir l'ADEPT</a>
-                      </div>
-                    </div>
-                    </div>
+                </div>
+            </section>
+</ng-container>
+<ng-template #elseMobile>
+    
+</ng-template>
 
-                    <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg');">
-                    <div class="carousel-container">
-                      <div class="carousel-content">
-                        <h2>Bienvenue à l'ADEPT</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="#about" class="btn-get-started scrollto">Découvrir l'ADEPT</a>
-                      </div>
-                    </div>
-                    </div> -->
-        <!-- </div>
-                <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Précédent</span>
-                </a>
-                <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">Suivant</span>
-                </a>
-              </div> -->
-      </div>
-    </div>
-  </div>
-</section>

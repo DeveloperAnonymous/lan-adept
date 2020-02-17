@@ -15,12 +15,18 @@ export class HomeComponent implements OnInit {
 	hours: number = this.getHours();
 	minutes: number = this.getMinutes();
 	seconds: number = this.getSeconds();
+	marg: number = 4;
+
+	mobile: boolean = false;
 
 	constructor() { }
 
 	ngOnInit(): void {
-		
+		if (window.screen.availWidth < 1366) { // 768px portrait
+			this.mobile = true;
+		}
 	}
+	
 	ngAfterViewInit(): void {
 		ticker.subscribe(_ => {
 			this.days = this.getDays();
