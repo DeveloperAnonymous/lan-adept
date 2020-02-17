@@ -7,7 +7,7 @@ import { fromEvent, Observable, Subscription } from "rxjs";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	mobile: boolean = false;
+	mobile: boolean;
 
 	resizeObservable$: Observable<Event>
 	resizeSubscription$: Subscription
@@ -15,9 +15,10 @@ export class AppComponent {
 	constructor() { }
 
 	ngOnInit(): void {
+        this.mobile = window.innerWidth < 1366;
 		this.resizeObservable$ = fromEvent(window, 'resize')
     	this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
-			this.mobile = window.screen.width < 1366;
+			this.mobile = window.innerWidth < 1366;
     	})
 	}
 }

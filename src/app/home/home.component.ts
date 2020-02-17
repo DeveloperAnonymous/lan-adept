@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 	minutes: number = this.getMinutes();
 	seconds: number = this.getSeconds();
 
-	mobile: boolean = false;
+	mobile: boolean;
 
 	resizeObservable$: Observable<Event>
 	resizeSubscription$: Subscription
@@ -25,9 +25,10 @@ export class HomeComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+		this.mobile = window.innerWidth < 1366;
 		this.resizeObservable$ = fromEvent(window, 'resize')
     	this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
-			this.mobile = window.screen.width < 1366;
+			this.mobile = window.innerWidth < 1366;
     	})
 	}
 	
