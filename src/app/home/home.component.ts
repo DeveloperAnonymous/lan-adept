@@ -2,6 +2,7 @@
 import * as $ from 'jquery';
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { fromEvent, Observable, Subscription } from "rxjs";
 const ticker = interval(1000);
 
 @Component({
@@ -15,16 +16,19 @@ export class HomeComponent implements OnInit {
 	hours: number = this.getHours();
 	minutes: number = this.getMinutes();
 	seconds: number = this.getSeconds();
-	marg: number = 4;
 
 	mobile: boolean = false;
+
+	resizeObservable$: Observable<Event>
+	resizeSubscription$: Subscription
 
 	constructor() { }
 
 	ngOnInit(): void {
-		if (window.screen.availWidth < 1366) { // 768px portrait
-			this.mobile = true;
-		}
+		this.resizeObservable$ = fromEvent(window, 'resize')
+    	this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
+			this.mobile = window.screen.availWidth < 1366;
+    	})
 	}
 	
 	ngAfterViewInit(): void {

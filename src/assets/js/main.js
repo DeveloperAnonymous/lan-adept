@@ -1,4 +1,4 @@
-jQuery(document).ready(function( $ ) {
+$(document).ready(function() {
 
   // Back to top button
   $(window).scroll(function() {
@@ -13,7 +13,6 @@ jQuery(document).ready(function( $ ) {
     return false;
   });
 
-  // Initiate the wowjs animation library
   new WOW().init();
 
   // Initiate superfish on nav menu
@@ -107,30 +106,6 @@ jQuery(document).ready(function( $ ) {
     }
   });
 
-  // Intro carousel
-  var introCarousel = $(".carousel");
-  var introCarouselIndicators = $(".carousel-indicators");
-  introCarousel.find(".carousel-inner").children(".carousel-item").each(function(index) {
-    (index === 0) ?
-    introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "' class='active'></li>") :
-    introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
-  });
-
-  $(".carousel").swipe({
-    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-      if (direction == 'left') $(this).carousel('next');
-      if (direction == 'right') $(this).carousel('prev');
-    },
-    allowPageScroll:"vertical"
-  });
-
-  // Skills section
-  $('#skills').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, { offset: '80%'} );
-
 // counterUp2 (used in Facts section)
   $('#facts').waypoint(function() {
     var counterUp = window.counterUp["default"];
@@ -143,19 +118,6 @@ jQuery(document).ready(function( $ ) {
         });
     });
   }, { offset: '80%'} );
-
-  // Porfolio isotope and filter
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-item',
-    layoutMode: 'fitRows'
-  });
-
-  $('#portfolio-flters li').on( 'click', function() {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({ filter: $(this).data('filter') });
-  });
 
   // Clients carousel (uses the Owl Carousel library)
   $(".clients-carousel").owlCarousel({

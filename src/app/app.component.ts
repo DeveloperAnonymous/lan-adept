@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { fromEvent, Observable, Subscription } from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Titre ici';
-  penis = "vagin";
-  heros = ["Iron man", "super man", "Captain marvel"];
-  indexArray = new Array(20);
+	mobile: boolean = false;
 
+	resizeObservable$: Observable<Event>
+	resizeSubscription$: Subscription
 
-  constructor(){
+	constructor() { }
 
-  }
-
-  allo(){
-      alert("Test");
-  }
+	ngOnInit(): void {
+		this.resizeObservable$ = fromEvent(window, 'resize')
+    	this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
+			this.mobile = window.screen.availWidth < 1366;
+    	})
+	}
 }
