@@ -11,7 +11,7 @@ const ticker = interval(1000);
 	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-	date:any = new Date("Mar 20, 2020 12:00:00");
+	date: any = new Date("Mar 20, 2020 12:00:00");
 	days: number = this.getDays();
 	hours: number = this.getHours();
 	minutes: number = this.getMinutes();
@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit {
 	ngOnInit(): void {
 		this.mobile = window.innerWidth < 1366;
 		this.resizeObservable$ = fromEvent(window, 'resize')
-    	this.resizeSubscription$ = this.resizeObservable$.subscribe( evt => {
+		this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => {
 			this.mobile = window.innerWidth < 1366;
-    	})
+		})
 	}
-	
+
 	ngAfterViewInit(): void {
 		ticker.subscribe(_ => {
 			this.days = this.getDays();

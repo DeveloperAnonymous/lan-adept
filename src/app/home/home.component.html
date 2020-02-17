@@ -5,15 +5,12 @@
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active" id="first" style="background-image: url('assets/img/adeptInfo.jpg');">
             <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="title h2">Bienvenue sur le site<br> du <br> LAN de l'ADEPT</h2>
-                <p>Nous organisons un LAN à chaque session durant la semaine de "lecture" !</p>
-                <br>
-                <br>
+              <div class="carousel-content col-10" style="padding-top: 50px;">
+                <h2 class="col-6 ml-auto mr-auto">Bienvenue sur le site du LAN de l'ADEPT</h2>
+                <p>Nous organisons un LAN à chaque session durant la semaine de "lecture"!</p>
                 <ng-container *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0; else finishTemplate">
                   <div class="white" style="font-size: 2rem">Le LAN débutera le</div>
                   <div class="white title h1" id="date" style="font-size: 4rem">{{getDate()}}</div>
-                  <br>
                   <h3 class="countDown title h3" *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0">
                     <div class='row' style='color: white;'>
                       <div class='col-md-3 col-sm-6 col-3'>
@@ -38,8 +35,6 @@
                       </div>
                     </div>
                   </h3>
-                  <br>
-                  <br>
                   <a href="" class="btn-get-started scrollto">Participer</a>
                 </ng-container>
                 <ng-template #finishTemplate>
