@@ -1,11 +1,11 @@
 #welcome {
-    font-size: 1.5em; 
+    font-size: 1.75rem; 
     font-weight: bolder;
 }
 
 #welcome-description {
     margin-top: 5vh;
-    font-size: 1.15em;
+    font-size: 1.25rem;
     font-weight: bolder;
     color: #D4AF37;
 

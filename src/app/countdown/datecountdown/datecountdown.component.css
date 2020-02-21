@@ -17,11 +17,17 @@
 }
 .btn-Participer {
     margin-top: 10vh;
-
 }
 .countdown {
     margin-top: 20px;
 }
+
+@media (max-width: 320px) { 
+    .btn-Participer {
+        margin-top: 6vh;
+    }
+}
+
 @media (max-width: 767px) {
     #date  {
         font-size: 1.75rem;
