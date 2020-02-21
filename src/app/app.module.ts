@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { CountdownComponent } from './countdown/countdown/countdown.component';
+import { DatecountdownComponent } from './countdown/datecountdown/datecountdown.component';
 
 const routes: Routes = [
   {path:"Home",component:HomeComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CountdownComponent,
+    DatecountdownComponent
   ],
   imports: [
     BrowserModule,
