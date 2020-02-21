@@ -1,7 +1,7 @@
 <ng-container *ngIf="days > 0 || hours > 0 || minutes > 0 || seconds > 0; else finishTemplate">
   <div id="lan" class="white">Le LAN débutera le</div>
   <div class="white text-center" id="date">{{getDate()}}</div>
-  <h3 class="countDown col-xl-6 col-md-10 col-sm-8 col-10 offset-xl-3 offset-md-1 offset-sm-2 offset-1">
+  <div class="col-xl-6 col-md-10 col-sm-8 col-10 offset-xl-3 offset-md-1 offset-sm-2 offset-1 white countdown">
     <div class='row'>
       <div class='col-md-3 col-6'>
         <div class='col-12'>{{days}}</div>
@@ -24,7 +24,7 @@
         <div *ngIf="seconds <= 1">Seconde</div>
       </div>
     </div>
-  </h3>
+  </div>
   <a href="" class="btn-Participer">Participer</a>
 </ng-container>
 <ng-template #finishTemplate>

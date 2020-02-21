@@ -1341,7 +1341,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .Veil {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .Container {
@@ -1358,8 +1358,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 1rem;
     letter-spacing: 1px;
     display: inline-block;
-    padding: 1vh 2vh;
-    border-radius: 8px;
+    padding: 1.6vh 5vh;
+    border-radius: 26px;
     transition: 0.5s;
     margin: 10px;
     color: #fff;
@@ -1368,6 +1368,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .btn-Participer:hover {
     color: white;
+    background-color: #10a22a
 }
 
 

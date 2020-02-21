@@ -20,5 +20,8 @@ export class AppComponent {
         this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => {
             this.mobile = window.innerWidth < 1366;
         })
+
+        // var mongoose = require('mongoose');
+        // mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
     }
 }
