@@ -24,7 +24,7 @@ a {
   transition: 0.5s;
 }
 
-a:hover, a:active, a:focus {
+a:hover, a:active, a:focus{
   color: #10d213;
   outline: none;
   text-decoration: none;
@@ -1292,7 +1292,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* MOBILE */
 
-.MobileBackground{
+.Background{
   background-image: url("assets/img/LanHome.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -1303,7 +1303,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .Veil{
   background-color:rgba(0,0,0,0.4);
 }
-.MobileContainer{
+.Container{
   text-align: center;
   padding-top: 15vh;
   height: 100vh;
@@ -1311,10 +1311,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-right: 25px;
 }
 
-.btn-MobileParticiper {
+.btn-Participer {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 3vh;
+  font-size: 1rem;
   letter-spacing: 1px;
   display: inline-block;
   padding: 1vh 2vh;
@@ -1324,5 +1324,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
   background: #10d213;
 }
+.btn-Participer:hover {
+  color: white;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #10d213; 
+}
 /*TEST -------*/
