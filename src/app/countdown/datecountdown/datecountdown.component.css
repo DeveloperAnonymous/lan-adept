@@ -1,0 +1,18 @@
+.date {
+    font-size: 4rem;
+}
+
+.lan {
+    font-size: 2rem;
+}
+@media (max-width: 768px) {
+    .date  {
+        font-size: 2rem;
+    }
+    .lan {
+        font-size: 1rem;
+    }
+    .row {
+
+    }
+}
