@@ -7,21 +7,12 @@ import { fromEvent, Observable, Subscription } from "rxjs";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    mobile: boolean;
-
     resizeObservable$: Observable<Event>
     resizeSubscription$: Subscription
 
     constructor() { }
 
     ngOnInit(): void {
-        this.mobile = window.innerWidth < 1366;
-        this.resizeObservable$ = fromEvent(window, 'resize')
-        this.resizeSubscription$ = this.resizeObservable$.subscribe(evt => {
-            this.mobile = window.innerWidth < 1366;
-        })
-
-        // var mongoose = require('mongoose');
-        // mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+        
     }
 }

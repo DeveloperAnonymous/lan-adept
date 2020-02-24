@@ -13,7 +13,9 @@ $(document).ready(function () {
 
                 $('img#footer-logo').attr("src","assets/img/badgeHS.png");
 
-                new Audio('assets/audio/secret.mp3').play();
+                var audio = new Audio('assets/audio/secret.mp3')
+                audio.volume = 0.025;
+                audio.play();
 
                 n = 0;
                 return false;

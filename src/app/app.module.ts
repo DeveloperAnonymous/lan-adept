@@ -9,9 +9,10 @@ import { CountdownComponent } from './countdown/countdown/countdown.component';
 import { DatecountdownComponent } from './countdown/datecountdown/datecountdown.component';
 
 const routes: Routes = [
-  {path:"Home",component:HomeComponent},
+  {path:"Home", component:HomeComponent},
   {path:"**", redirectTo:"/Home"}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
