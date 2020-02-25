@@ -1,8 +1,9 @@
 <?php
+
 # Auth
 $user = "lanadept";
 $host = "127.0.0.1";
-$pwd = "6SMsfhMGVv";
+$pwd = "123";
 $manager = new MongoDB\Driver\Manager("mongodb://$user:$pwd@$host/admin?authMechanism=SCRAM-SHA-1");
 
 function get_collection_data($collection) {
@@ -24,5 +25,4 @@ function upsert($collection, $_id, $data, $set_mode='$set') {
     return $result;
 }
 
-// db.createUser({user: "lanadept", pwd: "6SMsfhMGVv", roles: [ {role:  "root", db: "admin" }] })
 ?>
