@@ -7,9 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CountdownComponent } from './countdown/countdown/countdown.component';
 import { DatecountdownComponent } from './countdown/datecountdown/datecountdown.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path:"Home", component:HomeComponent},
+  {path:"login", component:LoginComponent},
   {path:"**", redirectTo:"/Home"}
 ];
 
@@ -18,11 +21,13 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     CountdownComponent,
-    DatecountdownComponent
+    DatecountdownComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       routes
     ),

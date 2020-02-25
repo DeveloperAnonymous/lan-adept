@@ -12,7 +12,13 @@
         </nav>
     </div>
 </header>
-<router-outlet></router-outlet>
+<div class="Background">
+    <div class="Veil">
+      <div class="Container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
 <footer id="footer">
     <div class="footer-top">
         <div class="container">
@@ -45,7 +51,7 @@
             © Copyright 2019 <strong class="green">ADEPT Informatique</strong>. Tous droits réservés. </div>
         <div class="credits">
             Ce site web est <a href="https://github.com/DeveloperAnonymous/lan-adept">open-source</a>. Merci à <a href="https://github.com/DeveloperAnonymous/lan-adept/graphs/contributors">tous ceux qui y ont collaboré</a> !
-            <br><span class="black">Why do Java programmers wear glasses ? Because they can't C# ;)</span>
+            <br><span id="secret"></span>
         </div>
     </div>
 </footer>
