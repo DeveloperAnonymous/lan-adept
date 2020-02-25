@@ -41,10 +41,11 @@ abstract class Layout extends Template
 
     function __construct($page_name, $content)
     {
-        parent::__construct('../templates/layout.tpl');
+        parent::__construct('../templates/layout.html');
 
+        $this->set_script("");
         $this->set_value('title', $page_name);
-        $this->set_value('navbar', navigationbar());
+        $this->set_value('navbar', new Navbar());
         $this->set_value('content', $content);
     }
 
@@ -88,7 +89,6 @@ class StandardLayout extends Layout
     {
         parent::__construct($title, $content);
 
-        $this->set_value("content", $content);
     }
 
     function set_base_url($base)
@@ -97,30 +97,30 @@ class StandardLayout extends Layout
     }
 }
 
-class NavigationBar extends StaticContent
+class Navbar extends StaticContent
 {
     public function __construct()
     {
-        parent::__construct('navigationbar.tpl');
+        parent::__construct("navbar.html");
+
     }
 }
 
-class shopPage extends Layout
+class Countdown extends StaticContent
 {
-    public function __construct($title, $content)
+    public function __construct()
     {
-        parent::__construct($title, $content);
-
-
+        parent::__construct('countdown.html');
     }
 }
 
-class login extends Layout
+class Home extends Layout
 {
     public function __construct($page_name, $content)
     {
-        parent::__construct($page_name, $content);
+        parent::__construct($page_name, new StaticContent('homecontent.html'));
 
+        $this->set_value('countdown', $content);
     }
 }
 
